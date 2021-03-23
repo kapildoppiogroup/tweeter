@@ -3,8 +3,8 @@
 .new-tweet{
   border-radius: 5px;
   padding: 10px;
-  display: flex;
   margin: 0 auto;
+  width: 100%;
 }
 
 #tweet-text {
@@ -36,5 +36,4 @@ button {
   border-bottom: 4px black solid;
   font-weight: 700;
   resize: none;
-  
 }
