@@ -14,6 +14,7 @@
   border-right: 0px;
   border-top: 0px;
   resize: none;
+  outline:none;
 }
 
 
@@ -36,4 +37,8 @@ button {
   border-bottom: 4px black solid;
   font-weight: 700;
   resize: none;
+}
+
+.red-counter {
+  color:red;
 }
