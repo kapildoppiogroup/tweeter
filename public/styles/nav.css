@@ -1,22 +1,25 @@
 nav {
-  height: 120px;
-  width: 100%;
-  background-color: #4056A1;
-  color: #FFFFFF;
-  padding: 1.5em;
+    height: 120px;
+    width: 100%;
+    background-color: #4056A1;
+    color: #FFFFFF;
+    padding: 1.5em;
+    position: sticky;
+    top: 0%;
+    width: 100%
 }
 
 .nav-container {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 nav span {
-  font-family: 'Bungee';
+    font-family: 'Bungee';
 }
 
 .arrow {
-  color: red;
-  display: flex;
-  justify-content: center;
+    color: red;
+    display: flex;
+    justify-content: center;
 }
