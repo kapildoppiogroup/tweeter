@@ -1,3 +1,4 @@
+const timeDifference = require('./helper');
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
@@ -30,13 +31,41 @@ const data = [{
 ];
 
 const renderTweets = function(tweets) {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
+  let $tweets = '';
+  for (let tweet in tweets) {
+    $tweets = $tweets + createTweetElement(tweets[tweet]);
+  }
 };
 
 const createTweetElement = function(tweet) {
-  let $tweet = $(`<article class="tweet">Hello world</article>`);
+
+  const image = tweet.user.avatars;
+  const name = tweet.user.name;
+  const handle = tweet.user.handle;
+  const content = tweet.content.text;
+  const time = timeDifference(Date.now(), tweet.created_at);
+
+  let $tweet = $(`<article class="article">
+  <header class="article-header">
+      <div class="article-header-profile">
+          <img src="${image}" alt="" class="profile-icon">
+          <span class="account-name">${name}</span>
+
+      </div>
+      <span class="account-id">${handle}</span>
+  </header>
+  <div class="tweet-content">
+      <textarea readonly name="tweet" class="tweet">${content}</textarea>
+  </div>
+  <footer class="article-footer">
+      <span>${time}</span>
+      <div class="article-footer-icons">
+          <i class="fas fa-flag"></i>
+          <i class="fas fa-retweet"></i>
+          <i class="fas fa-heart"></i>
+      </div>
+  </footer>
+</article>`);
   return $tweet;
 };
 
