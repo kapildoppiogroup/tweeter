@@ -1,44 +1,45 @@
-
-
-.new-tweet{
-  border-radius: 5px;
-  padding: 10px;
-  margin: 0 auto;
-  width: 100%;
+.new-tweet {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 #tweet-text {
-  background-color: #f4f1ec;
-  border-bottom: 2px solid #545149;
-  border-left: 0px;
-  border-right: 0px;
-  border-top: 0px;
-  resize: none;
-  outline:none;
+    background-color: #f4f1ec;
+    border-bottom: 2px solid #545149;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    resize: none;
+    outline: none;
 }
 
-
 .new-tweet .counter {
-  float: right;
+    float: right;
 }
 
 button {
-  background-color: #4056A1;
-  font-family: 'Bungee';
-  color:white;
+    background-color: #4056A1;
+    font-family: 'Bungee';
+    color: white;
 }
 
 #form-tweet-submit textarea {
-  width: 100%;
-  margin: 10px auto 10px auto;
-  background-color: inherit;
-  border: none;
-  height: 2em;
-  border-bottom: 4px black solid;
-  font-weight: 700;
-  resize: none;
+    width: 100%;
+    margin: 10px auto 10px auto;
+    background-color: inherit;
+    border: none;
+    height: 2em;
+    border-bottom: 4px solid #545149;
+    font-weight: 700;
+    resize: none;
 }
 
 .red-counter {
-  color:red;
+    color: red;
+}
+
+.counter {
+    font-family: 'Bungee';
 }
