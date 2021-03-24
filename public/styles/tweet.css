@@ -47,13 +47,7 @@ article {
     display: flex;
 }
 
-#tweet {
-    /*
-    border-left: 0px;
-    border-right: 0px;
-    border-top: 0px;
-    border-bottom: 4px solid #545149;
-    */
+.tweet {
     border-style: solid;
     border-color: #545149;
     border-width: 0 0 4px;
