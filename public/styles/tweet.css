@@ -1,4 +1,4 @@
-article {
+.article {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -14,6 +14,7 @@ article {
     background-color: #f4f1ec;
     border: 4px solid #545149;
     resize: none;
+    margin:10px;
 }
 
 .tweet-container .article:hover {
