@@ -1,7 +1,18 @@
 $(document).ready(function () {
 
+  $("#arrow").on("click", function(event) {
+    const $newTweet = $("#new-tweet");
+
+    if ($newTweet.is(":hidden")) {
+      $newTweet.slideDown();
+      $("#tweet-text").focus();
+
+    } else {
+      $newTweet.slideUp();
+    }
+  });
+
   $("#tweet-text").on("focus", function (event) {
-    console.log("kapil");
     $('#error-message').slideUp();
   });
 
@@ -18,7 +29,6 @@ $(document).ready(function () {
           $("#tweet-text").val("").trigger("input");
         });
     } else {
-      console.log('error');
       triggerError();
     }
   });

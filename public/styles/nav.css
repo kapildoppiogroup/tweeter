@@ -22,4 +22,20 @@ nav span {
     color: red;
     display: flex;
     justify-content: center;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+    animation-name: bounce;
+    animation-timing-function: ease;
+}
+
+.arrow:hover{
+    color:yellow;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
 }
