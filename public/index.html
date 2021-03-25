@@ -6,11 +6,14 @@
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        type="text/css" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/fb51f53bd3.js" crossorigin="anonymous"></script>
 
@@ -32,46 +35,51 @@
 </head>
 
 <body>
-    <!-- Top nav bar (fixed) -->
-    <nav>
-        <div class="nav-container">
-            <div class="left-nav">
-                <span>tweeter</span>
-            </div>
-            <div class="right-nav">
-                <div class="new-tweet" id="write-tweet"><strong>Write</strong>&nbsp; a new tweet</div>
-                <div class="arrow" id="arrow"><i class="icon fa fa-angle-double-down"></i></div>
-            </div>
-        </div>
-    </nav>
-
-    <header class="main-header">
-        <div>
-            <img src="/images/profile-hex.png">
-        </div>
-        <br>
-        <div>
-            <h2>San Kum</h2>
-        </div>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-        <section class="new-tweet" id="new-tweet" hidden>
-            <form action="/tweets/" method="POST" id="form-tweet-submit">
-                <!--<label for="tweet-text">What are you humming about?</label>-->
-                <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-                <div class="tweet-text-bottom">
-                    <button type="submit">Tweet</button>
-                    <output name="counter" class="counter" for="tweet-text">140</output>
+    <div class="top-div">
+        <div class="nav-div">
+            <nav class="nav">
+                <div class="nav-container">
+                    <div class="left-nav">
+                        <span>tweeter</span>
+                    </div>
+                    <div class="right-nav">
+                        <div class="new-tweet" id="write-tweet"><strong>Write</strong>&nbsp; a new tweet</div>
+                        <div class="arrow" id="arrow"><i class="icon fa fa-angle-double-down"></i></div>
+                    </div>
                 </div>
-            </form>
-            <footer id="error-message" hidden>A tweet cannot be blank or more than 140 characters</footer>
-        </section>
-        <section class="tweet-container" id="tweet-container">
-        </section>
-        <button id="myBtn" title="Go to top"><i class="fas fa-angle-double-up"></i></button>
-    </main>
+            </nav>
+        </div>
+        <div class="header-main-div">
+            <div class="header-div">
+            <header class="main-header">
+                <div>
+                    <img src="/images/profile-hex.png">
+                </div>
+                <br>
+                <div>
+                    <h2>San Kum</h2>
+                </div>
+            </header>
+        </div>
+        <div class="main-div">
+            <main class="container">
+                <section class="new-tweet" id="new-tweet" hidden>
+                    <form action="/tweets/" method="POST" id="form-tweet-submit">
+                        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+                        <div class="tweet-text-bottom">
+                            <button type="submit">Tweet</button>
+                            <output name="counter" class="counter" for="tweet-text">140</output>
+                        </div>
+                    </form>
+                    <footer id="error-message" hidden>A tweet cannot be blank or more than 140 characters</footer>
+                </section>
+                <section class="tweet-container" id="tweet-container">
+                </section>
+                <button id="myBtn" title="Go to top"><i class="fas fa-angle-double-up"></i></button>
+            </main>
+        </div>
+        </div>
+    </div>
     <button id="myBtn" title="Go to top">Top</button>
 </body>
 
