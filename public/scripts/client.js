@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+  $("#tweet-text").on("focus", function (event) {
+    console.log("kapil");
+    $('#error-message').slideUp();
+  });
+
   $("#form-tweet-submit").on("submit", function (event) {
     event.preventDefault();
     let tweet = $(this).serialize();
@@ -10,13 +15,21 @@ $(document).ready(function () {
         .done(function () {
           loadTweets();
           $(this).trigger("reset");
-          $("#tweet-text").val("");
-          $("#tweet-text").keyup();
+          $("#tweet-text").val("").trigger("input");
         });
     } else {
-      alert("wrong input");
+      console.log('error');
+      triggerError();
     }
   });
+
+  const triggerError = function () {
+    const $errorMessage = $('#error-message');
+    $errorMessage.slideDown();
+    setTimeout(function () {
+      $errorMessage.slideUp();
+    }, 3000);
+  };
 
   const renderTweets = function (tweets) {
     const tweetContainer = $('#tweet-container');
@@ -39,7 +52,7 @@ $(document).ready(function () {
 });
 
 const validateTweet = function (tweet) {
-  return tweet.length > 5 && tweet.length < 140;
+  return tweet && tweet.length > 5 && tweet.length < 140;
 };
 
 const createTweetElement = function (tweet) {
