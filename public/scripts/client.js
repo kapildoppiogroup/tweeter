@@ -1,13 +1,46 @@
 $(document).ready(function () {
-  const renderTweets = function (tweets) {
-    let $tweets = '';
-    for (let tweet in tweets) {
-      $tweets = $tweets + createTweetElement(tweets[tweet]);
+
+  $("#form-tweet-submit").on("submit", function (event) {
+    event.preventDefault();
+    let tweet = $(this).serialize();
+    if (validateTweet(tweet)) {
+      $.post("tweets", tweet, function (data) {
+        return data;
+      })
+        .done(function () {
+          loadTweets();
+          $(this).trigger("reset");
+          $("#tweet-text").val("");
+          $("#tweet-text").keyup();
+        });
+    } else {
+      alert("wrong input");
     }
-    $('#tweet-container').append($($tweets));
+  });
+
+  const renderTweets = function (tweets) {
+    const tweetContainer = $('#tweet-container');
+    tweetContainer.empty();
+    for (let tweet in tweets) {
+      const createdTweet = createTweetElement(tweets[tweet]);
+      tweetContainer.prepend($(createdTweet));
+    }
   };
-  renderTweets(data);
+
+  const loadTweets = function () {
+    $.get("tweets", function (data) {
+      return data;
+    })
+      .done(function (data) {
+        renderTweets(data);
+      });
+  };
+  loadTweets();
 });
+
+const validateTweet = function (tweet) {
+  return tweet.length > 5 && tweet.length < 140;
+};
 
 const createTweetElement = function (tweet) {
   const image = tweet.user.avatars;
@@ -39,30 +72,6 @@ const createTweetElement = function (tweet) {
 </article>`;
   return tweetString;
 };
-
-const data = [{
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@SirIsaac"
-  },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
-  },
-  "created_at": 1461116232227
-},
-{
-  "user": {
-    "name": "Descartes",
-    "avatars": "https://i.imgur.com/nlhLi3I.png",
-    "handle": "@rd"
-  },
-  "content": {
-    "text": "Je pense , donc je suis"
-  },
-  "created_at": 1461113959088
-}
-];
 
 const timeDifference = function (current, previous) {
 
