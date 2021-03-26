@@ -22,11 +22,11 @@
     display: block;
 }
 
-.tweet-container .article:hover .account-id {
+.tweet-container .article:hover .account-id{
     display: block;
 }
 
-.account-id {
+.account-id{
     display: none;
 }
 
@@ -60,4 +60,12 @@
     height: 2em;
     font-weight: 600;
     color: #545149;
+}
+.article-footer-icons {
+    display: none;
+}
+
+.tweet-container .article:hover .article-footer-icons {
+    display: block;
+    color: #eba800;
 }

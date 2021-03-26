@@ -130,9 +130,9 @@ const createTweetElement = function (tweet) {
   <footer class="article-footer">
       <span>${time}</span>
       <div class="article-footer-icons">
-          <i class="fas fa-flag"></i>
-          <i class="fas fa-retweet"></i>
-          <i class="fas fa-heart"></i>
+          <i class="fas fa-flag" id = "fa-flag"></i>
+          <i class="fas fa-retweet" id = "fa-retweet"></i>
+          <i class="fas fa-heart" id = "fa-heart"></i>
       </div>
   </footer>
 </article>`;
