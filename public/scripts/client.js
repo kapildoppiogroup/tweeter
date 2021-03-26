@@ -99,8 +99,6 @@ $(document).ready(function () {
  * @returns boolean
  */
 const validateTweet = function (tweet) {
-  console.log(tweet.length);
-  console.log(tweet);
   return tweet && tweet.length > 5 && tweet.length <= 145;
 };
 
