@@ -55,11 +55,12 @@
     resize: none;
     outline: none;
     width: 90%;
-    margin: 30px auto 10px auto;
+    margin: 10px auto 10px auto;
     background-color: inherit;
     height: 2em;
     font-weight: 600;
     color: #545149;
+    height: auto;
 }
 .article-footer-icons {
     display: none;

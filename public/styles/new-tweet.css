@@ -34,6 +34,7 @@ button {
     border-bottom: 4px solid #545149;
     font-weight: 700;
     resize: none;
+    height: auto;
 }
 
 .red-counter {

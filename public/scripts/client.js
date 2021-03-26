@@ -52,7 +52,7 @@ $(document).ready(function () {
    */
   const triggerError = function () {
     const $errorMessage = $('#error-message');
-    
+
     //animate error box
     $errorMessage.slideDown();
 
@@ -98,8 +98,10 @@ $(document).ready(function () {
  * @param {*} tweet
  * @returns boolean
  */
-const validateTweet = function(tweet) {
-  return tweet && tweet.length > 5 && tweet.length < 140;
+const validateTweet = function (tweet) {
+  console.log(tweet.length);
+  console.log(tweet);
+  return tweet && tweet.length > 5 && tweet.length <= 145;
 };
 
 /**
