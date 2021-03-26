@@ -19,3 +19,5 @@ The app changes the layout on hitting 1024px or below screen
 The profile picture moves to the left.
 
 !["Responsive Design"]("https://github.com/kapildoppiogroup/tweeter/blob/master/resources/window_size.gif?raw=true")
+<img src="https://github.com/kapildoppiogroup/tweeter/blob/master/resources/window_size.gif?raw=true" width="200px">
+
