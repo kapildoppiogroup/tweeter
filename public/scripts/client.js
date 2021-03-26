@@ -1,29 +1,43 @@
 $(document).ready(function () {
 
-  $("#arrow").on("click", function(event) {
+  /**
+   * This is a toggle button click functionality to hide and unhide
+   * the compose tweet form
+   */
+  $("#arrow").on("click", function (event) {
     const $newTweet = $("#new-tweet");
-
     if ($newTweet.is(":hidden")) {
       $newTweet.slideDown();
       $("#tweet-text").focus();
-
     } else {
       $newTweet.slideUp();
     }
   });
 
+  /**
+   * Slide up animation for the error message
+   */
   $("#tweet-text").on("focus", function (event) {
     $('#error-message').slideUp();
   });
 
+  /**
+   * This function is to submit a new tweet
+   */
   $("#form-tweet-submit").on("submit", function (event) {
     event.preventDefault();
     let tweet = $(this).serialize();
+
+    // validate tweet before saving it to the database
     if (validateTweet(tweet)) {
+
+      // ajax call to post tweet
       $.post("tweets", tweet, function (data) {
         return data;
       })
         .done(function () {
+
+          //load all the tweets if successfully posted the tweet
           loadTweets();
           $(this).trigger("reset");
           $("#tweet-text").val("").trigger("input");
@@ -33,14 +47,28 @@ $(document).ready(function () {
     }
   });
 
+  /**
+   * Trigger error functionality
+   */
   const triggerError = function () {
     const $errorMessage = $('#error-message');
+    
+    //animate error box
     $errorMessage.slideDown();
+
+    //show error only for 3 seconds
     setTimeout(function () {
       $errorMessage.slideUp();
     }, 3000);
   };
 
+  /**
+   * This function is to render all the tweets in the tweet container
+   * HTML object. Here we are prepending the tweets to show the newly
+   * posted tweet on top.
+   *
+   * @param {*} tweets
+   */
   const renderTweets = function (tweets) {
     const tweetContainer = $('#tweet-container');
     tweetContainer.empty();
@@ -50,6 +78,10 @@ $(document).ready(function () {
     }
   };
 
+  /**
+   * call get ajax to get all the tweets from database and render
+   * them
+   */
   const loadTweets = function () {
     $.get("tweets", function (data) {
       return data;
@@ -61,10 +93,21 @@ $(document).ready(function () {
   loadTweets();
 });
 
-const validateTweet = function (tweet) {
+/**
+ * Validate the length of the tweet
+ * @param {*} tweet
+ * @returns boolean
+ */
+const validateTweet = function(tweet) {
   return tweet && tweet.length > 5 && tweet.length < 140;
 };
 
+/**
+ * To create the html element for all the tweets
+ * 
+ * @param {*} tweet
+ * @returns
+ */
 const createTweetElement = function (tweet) {
   const image = tweet.user.avatars;
   const name = tweet.user.name;
@@ -96,6 +139,13 @@ const createTweetElement = function (tweet) {
   return tweetString;
 };
 
+/**
+ * To calculate the relative time of a tweet
+ *
+ * @param {*} current
+ * @param {*} previous
+ * @return {*} relative time. e.g. 2 days ago, 5 minutes ago
+ */
 const timeDifference = function (current, previous) {
 
   let msPerMinute = 60 * 1000;
