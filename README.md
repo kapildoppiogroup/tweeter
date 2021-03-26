@@ -20,17 +20,17 @@ The app changes the layout on hitting 1024px or below screen. The profile pictur
 ### Toggle Button To Compose Tweet
 
 One can hide or unhide the compose tweet feature using this feature on the nav bar
-<img src="https://github.com/kapildoppiogroup/tweeter/blob/master/resources/write_new_tweet.gif?raw=true" width="400px">
+<img src="https://github.com/kapildoppiogroup/tweeter/blob/master/resources/write_new_tweet.gif?raw=true" width="500px">
 
 ### Scroll to Top Functionality
 
 When a user scrolls down, a button appears in the right bottom. On clicking, it takes the user to the top of the screen.
-<img src="https://github.com/kapildoppiogroup/tweeter/blob/master/resources/scroll_up.gif?raw=true" width="400px">
+<img src="https://github.com/kapildoppiogroup/tweeter/blob/master/resources/scroll_up.gif?raw=true" width="300px">
 
 ### Hover on Tweet
 
 Hovering over the tweet shows the username and it also draws a border around the box. 
-<img src="https://github.com/kapildoppiogroup/tweeter/blob/master/resources/hover_on_tweet.gif?raw=true" width="400px">
+<img src="https://github.com/kapildoppiogroup/tweeter/blob/master/resources/hover_on_tweet.gif?raw=true" width="600px">
 
 ### Character Count
 
@@ -40,4 +40,4 @@ A user can see the number of characters typed
 ### Animated Error
 
 If it is an empty tweet or the number of characters more than 140, then an error is shown in a small animation.
-<img src="https://github.com/kapildoppiogroup/tweeter/blob/master/resources/error.gif?raw=true" width="600px">
+<img src="https://github.com/kapildoppiogroup/tweeter/blob/master/resources/Error.gif?raw=true" width="600px">
