@@ -5,8 +5,13 @@ nav {
     color: #FFFFFF;
     padding: 1.5em;
     position: sticky;
-    top: 0%;
+    top: 0;
     width: 100%
+}
+
+.nav-div {
+    position: sticky;
+    top: 0;
 }
 
 .nav-container {
